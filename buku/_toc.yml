@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 
 chapters: 
-- file: intro1
-- file: control_flow
+- file: intro/intro1
+- file: intro/control_flow
+- file: intro/list
     
