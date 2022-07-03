@@ -334,19 +334,61 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kriteria-mendeklarasikan-list">
-   Kriteria mendeklarasikan list
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   List
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kriteria-mendeklarasikan-list">
+     Kriteria mendeklarasikan list
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mengakses-list">
+     mengakses list
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-methods">
+     List Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#menambahkan-list-dengan-plus">
+   Menambahkan list dengan + (Plus)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mengakses-list">
-   mengakses list
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mengakses-list-dengan-index">
+   Mengakses list dengan index.
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#list-methods">
-   List Methods
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#negatif-index-mengakses-list-dari-belakang">
+   Negatif index: mengakses list dari belakang.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifikasi-element-list">
+   Modifikasi element list.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-element-list">
+   Removing element list.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-dimension-list">
+   Two Dimension List
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-about-list">
+   Review about list.
   </a>
  </li>
 </ul>
@@ -368,19 +410,61 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kriteria-mendeklarasikan-list">
-   Kriteria mendeklarasikan list
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   List
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kriteria-mendeklarasikan-list">
+     Kriteria mendeklarasikan list
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mengakses-list">
+     mengakses list
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-methods">
+     List Methods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#menambahkan-list-dengan-plus">
+   Menambahkan list dengan + (Plus)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mengakses-list">
-   mengakses list
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mengakses-list-dengan-index">
+   Mengakses list dengan index.
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#list-methods">
-   List Methods
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#negatif-index-mengakses-list-dari-belakang">
+   Negatif index: mengakses list dari belakang.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifikasi-element-list">
+   Modifikasi element list.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-element-list">
+   Removing element list.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-dimension-list">
+   Two Dimension List
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-about-list">
+   Review about list.
   </a>
  </li>
 </ul>
@@ -466,8 +550,221 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Pada kasus ini .append method berfungsi untuk menambahkan elemen baru ke list.</p>
+<p>Pada kasus ini .append method berfungsi untuk menambahkan elemen baru ke list, yaitu element int 6. dengan ini kita dapat simpulkan bahwa list dalam python adaah mutable. yang artinya bisa diubah ketika sudah dideklarasikan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bola&quot;</span><span class="p">,</span> <span class="s2">&quot;kotak&quot;</span><span class="p">,</span> <span class="s2">&quot;buku&quot;</span><span class="p">]</span> 
+<span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;komputer&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bola&#39;, &#39;kotak&#39;, &#39;buku&#39;, &#39;komputer&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="menambahkan-list-dengan-plus">
+<h1>Menambahkan list dengan + (Plus)<a class="headerlink" href="#menambahkan-list-dengan-plus" title="Permalink to this headline">#</a></h1>
+<p>list pada python bisa ditambahkan dengan list lain dengan menggunakan operator +. namun tipe datanya juga harus list. seperti kode di bawah.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">items_to_add</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;buku&quot;</span><span class="p">,</span> <span class="s2">&quot;komputer&quot;</span><span class="p">,</span> <span class="s2">&quot;bola&quot;</span><span class="p">,</span> <span class="s2">&quot;kotak&quot;</span><span class="p">]</span>
+<span class="n">items_to_add_new</span> <span class="o">=</span> <span class="n">items_to_add</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;laptop&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">items_to_add_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;buku&#39;, &#39;komputer&#39;, &#39;bola&#39;, &#39;kotak&#39;, &#39;laptop&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">items_to_add_new2</span> <span class="o">=</span> <span class="n">items_to_add</span> <span class="o">+</span> <span class="s2">&quot;laptop&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">items_to_add_new2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">items_to_add_new2</span> <span class="o">=</span> <span class="n">items_to_add</span> <span class="o">+</span> <span class="s2">&quot;laptop&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">items_to_add_new2</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: can only concatenate list (not &quot;str&quot;) to list
+</pre></div>
+</div>
+</div>
+</div>
+<p>type error terjadi karena kita concatenate list dengan tipe data string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orders</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;daisy&quot;</span><span class="p">,</span> <span class="s2">&quot;buttercup&quot;</span><span class="p">,</span> <span class="s2">&quot;snapdragon&quot;</span><span class="p">,</span> <span class="s2">&quot;gardenia&quot;</span><span class="p">,</span> <span class="s2">&quot;lily&quot;</span><span class="p">]</span>
+
+<span class="c1"># Create new orders here:</span>
+<span class="n">new_orders</span> <span class="o">=</span>  <span class="p">[</span><span class="s2">&quot;lilac&quot;</span><span class="p">,</span> <span class="s2">&quot;iris&quot;</span><span class="p">]</span>
+
+<span class="n">orders_combined</span> <span class="o">=</span> <span class="n">orders</span> <span class="o">+</span> <span class="n">new_orders</span> 
+
+<span class="n">broken_prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mengakses-list-dengan-index">
+<h1>Mengakses list dengan index.<a class="headerlink" href="#mengakses-list-dengan-index" title="Permalink to this headline">#</a></h1>
+<p>Index pada list dimulai dari 0. jadi index dari element pertama pada list berindex 0.
+sekarang kita coba lihat bagaimana mengakses item dalam list menggunakan index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">employees</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Michael&quot;</span><span class="p">,</span> <span class="s2">&quot;Dwight&quot;</span><span class="p">,</span> <span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="s2">&quot;Pam&quot;</span><span class="p">,</span> <span class="s2">&quot;Ryan&quot;</span><span class="p">,</span> <span class="s2">&quot;Andy&quot;</span><span class="p">,</span> <span class="s2">&quot;Robert&quot;</span><span class="p">]</span>
+<span class="n">forth_employee</span> <span class="o">=</span> <span class="n">employees</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">forth_employee</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pam
+</pre></div>
+</div>
+</div>
+</div>
+<p>dari contoh di atas kita bisa lihat employee ke 4 berindex 3 dan begitu seterusnya.</p>
+<p>jika index melebih batas list maka akan terjadi error. yaitu index error. sseperti contoh di bawah.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">/workspaces/mathonpython/buku/intro/list.ipynb Cell 8&#39;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://codespaces%2Bmrizklh-mathonpython-69gpqv7v6hrjj7/workspaces/mathonpython/buku/intro/list.ipynb#ch0000007vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://codespaces%2Bmrizklh-mathonpython-69gpqv7v6hrjj7/workspaces/mathonpython/buku/intro/list.ipynb#ch0000007vscode-remote?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>hal ini dikarenakan list[6] tidak ada. yang ada cuma sampe index 4. sehingga terjadi index error.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="negatif-index-mengakses-list-dari-belakang">
+<h1>Negatif index: mengakses list dari belakang.<a class="headerlink" href="#negatif-index-mengakses-list-dari-belakang" title="Permalink to this headline">#</a></h1>
+<p>Dengan negatif index kita bisa mengakses item pada list dari belakang.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shopping_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;eggs&quot;</span><span class="p">,</span> <span class="s2">&quot;butter&quot;</span><span class="p">,</span> <span class="s2">&quot;milk&quot;</span><span class="p">,</span> <span class="s2">&quot;cucumbers&quot;</span><span class="p">,</span> <span class="s2">&quot;juice&quot;</span><span class="p">,</span> <span class="s2">&quot;cereal&quot;</span><span class="p">]</span>
+<span class="n">last_element</span> <span class="o">=</span> <span class="n">shopping_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">index5_element</span> <span class="o">=</span> <span class="n">shopping_list</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_element</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index5_element</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="modifikasi-element-list">
+<h1>Modifikasi element list.<a class="headerlink" href="#modifikasi-element-list" title="Permalink to this headline">#</a></h1>
+<p>kita bisa mengganti elemen list dengan menggunakan operator assignment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arden_waitlist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jiho&quot;</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">,</span><span class="s2">&quot;Sonny&quot;</span><span class="p">,</span> <span class="s2">&quot;Alisha&quot;</span><span class="p">]</span>
+<span class="n">garden_waitlist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Calla&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">garden_waitlist</span><span class="p">)</span>
+
+<span class="n">garden_waitlist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Alex&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">garden_waitlist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="removing-element-list">
+<h1>Removing element list.<a class="headerlink" href="#removing-element-list" title="Permalink to this headline">#</a></h1>
+<p>Kita bisa menghilangkan item dari suat List. dengan method .remove. seperti contoh dibawah.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">order_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Celery&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange Juice&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange&quot;</span><span class="p">,</span> <span class="s2">&quot;Flatbread&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">order_list</span><span class="p">)</span>
+<span class="n">order_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Flatbread&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">order_list</span><span class="p">)</span>
+<span class="n">new_store_order_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span> <span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="s2">&quot;Mango&quot;</span><span class="p">,</span> <span class="s2">&quot;Broccoli&quot;</span><span class="p">,</span> <span class="s2">&quot;Mango&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_store_order_list</span><span class="p">)</span>
+<span class="n">new_store_order_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Mango&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_store_order_list</span><span class="p">)</span>
+<span class="n">new_store_order_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Onions&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>kita tidak bisa remove item yang tidak ada di list. jika kita melakukan itu akan terjadi value error.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="two-dimension-list">
+<h1>Two Dimension List<a class="headerlink" href="#two-dimension-list" title="Permalink to this headline">#</a></h1>
+<p>List bisa mengandung list lain. seperti contoh dibawah.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Jenny&quot;</span><span class="p">,</span> <span class="mi">61</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Alexus&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Sam&quot;</span><span class="p">,</span> <span class="mi">67</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Grace&quot;</span><span class="p">,</span> <span class="mi">64</span><span class="p">]]</span>
+<span class="n">heights</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;Vik&quot;</span><span class="p">,</span> <span class="mi">68</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Aaron&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">],[</span><span class="s2">&quot;Dhruti&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_name_test</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Jenny&quot;</span><span class="p">,</span>	<span class="mi">90</span><span class="p">],[</span><span class="s2">&quot;Alexus&quot;</span><span class="p">,</span>	<span class="mf">85.5</span><span class="p">],[</span><span class="s2">&quot;Sam&quot;</span><span class="p">,</span>	<span class="mi">83</span><span class="p">],[</span><span class="s2">&quot;Ellie&quot;</span><span class="p">,</span>	<span class="mf">101.5</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">class_name_test</span><span class="p">)</span>
+<span class="n">sams_score</span> <span class="o">=</span> <span class="n">class_name_test</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sams_score</span><span class="p">)</span>
+<span class="n">ellies_score</span> <span class="o">=</span> <span class="n">class_name_test</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ellies_score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">incoming_class</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Kenny&quot;</span><span class="p">,</span> <span class="s2">&quot;American&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">],[</span><span class="s2">&quot;Tanya&quot;</span><span class="p">,</span> <span class="s2">&quot;Russian&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Madison&quot;</span><span class="p">,</span> <span class="s2">&quot;Indian&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
+<span class="n">incoming_class</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">incoming_class</span><span class="p">)</span>
+<span class="n">incoming_class</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">][</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Ken&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">incoming_class</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="review-about-list">
+<h1>Review about list.<a class="headerlink" href="#review-about-list" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ainsley&quot;</span><span class="p">,</span> <span class="s2">&quot;Ben&quot;</span><span class="p">,</span> <span class="s2">&quot;Chani&quot;</span><span class="p">,</span><span class="s2">&quot;Depak&quot;</span><span class="p">]</span> 
+<span class="n">preferred_size</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Small&quot;</span><span class="p">,</span> <span class="s2">&quot;Large&quot;</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">]</span>
+<span class="n">preferred_size</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Medium&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preferred_size</span><span class="p">)</span>
+<span class="n">customer_data</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Ainsley&quot;</span><span class="p">,</span>	<span class="s2">&quot;Small&quot;</span><span class="p">,</span>	<span class="kc">True</span><span class="p">],[</span><span class="s2">&quot;Ben&quot;</span><span class="p">,</span>	<span class="s2">&quot;Large&quot;</span><span class="p">,</span>	<span class="kc">False</span><span class="p">],[</span><span class="s2">&quot;Chani&quot;</span><span class="p">,</span><span class="s2">&quot;Medium&quot;</span><span class="p">,</span>	<span class="kc">True</span><span class="p">],[</span><span class="s2">&quot;Depak&quot;</span><span class="p">,</span><span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">customer_data</span><span class="p">)</span>
+<span class="n">customer_data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">customer_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">customer_data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
