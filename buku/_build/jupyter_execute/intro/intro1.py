@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## this is introduction to python 
+# # this is introduction to python 
 # 
 # at this point we have no idea what to do. 
 
@@ -107,35 +107,4 @@ my_age = 30
 half_my_age = my_age / 2
 greeting = "Hello" 
 greeting_name = greeting + " " + name 
-
-
-# In[8]:
-
-
-""""
-Take a look at the complete alphabet and find your initials. Notice how each block letter is 7x5 and formed by the letter itself.
-
-My initials are S and L, so my initials.py program should output:
-"""
-#make big s and l using the letter s and l 
-a = '''
-
-    SSSSS
-    S     S
-    SSSSS
-    S     S
-    SSSSS
-
-'''
-
-b = '''
-
-    LLLLL
-    L     L
-    LLLLL
-    L     L
-    LLLLL         
-'''
-print (a)
-
 

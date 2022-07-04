@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## this is introdcution from code academy
+# # this is introdcution from code academy
 # 1.
 # Determine if the following statements are boolean expressions or not. If they are, set the matching variable to the right to "Yes" and if not set the variable to "No". Here’s an example of what to do:
 # 
@@ -103,7 +103,7 @@ if credits >= 120 and gpa >= 2.0:
 print( (4 <= 2 * 3) and (7 + 1 == 8))
 
 
-# # Error di Python Review 
+# ### Error di Python Review 
 # 
 # jadi ada tiga macam error yang bisa terjadi di Python:
 # - nameerror: adalah error yang menandakan bahwa sebuah nama yang kita gunakan tidak ada di dalam sebuah objek.
