@@ -8,4 +8,6 @@ chapters:
 - file: intro/intro1
 - file: intro/control_flow
 - file: intro/list
+- file: intro/loops
+- file: intro/function
     

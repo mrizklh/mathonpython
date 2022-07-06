@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Loops &#8212; SKIA with Me</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Function" href="function.html" />
+    <link rel="prev" title="List" href="list.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">SKIA with Me</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to SKIA with ME
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
+   introduction to python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_flow.html">
+   control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="list.html">
+   List
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function.html">
+   Function
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/mrizklh/mathonpython/master?urlpath=tree/buku/intro/loops.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/mrizklh/mathonpython"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/mrizklh/mathonpython/issues/new?title=Issue%20on%20page%20%2Fintro/loops.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/intro/loops.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop-sebuah-pengenalan">
+   for loop: sebuah pengenalan.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop-using-range">
+     for loop using range
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loop-sebuah-pengenalan">
+   While loop: sebuah pengenalan.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loop-warning-keadaan-ini-akan-mengakibatkan-program-terjebak-dan-komputer-anda-crash">
+     Infinite Loop: warning, keadaan ini akan mengakibatkan program terjebak dan komputer anda crash.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cara-menggabungkan-2-list-dengan-menggunakan-for-loop">
+     cara menggabungkan 2 list dengan menggunakan for loop.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-control-break">
+     Loop Control: Break
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-control-continue">
+     Loop Control: Continue
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#perhatikan-hal-berikut">
+       perhatikan hal berikut:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-loop">
+     nested Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-comprehension">
+     list comprehension
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-comprehension-using-condition">
+       list comprehension using condition.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-loop">
+   Review Loop
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Loops</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop-sebuah-pengenalan">
+   for loop: sebuah pengenalan.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop-using-range">
+     for loop using range
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loop-sebuah-pengenalan">
+   While loop: sebuah pengenalan.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loop-warning-keadaan-ini-akan-mengakibatkan-program-terjebak-dan-komputer-anda-crash">
+     Infinite Loop: warning, keadaan ini akan mengakibatkan program terjebak dan komputer anda crash.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cara-menggabungkan-2-list-dengan-menggunakan-for-loop">
+     cara menggabungkan 2 list dengan menggunakan for loop.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-control-break">
+     Loop Control: Break
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-control-continue">
+     Loop Control: Continue
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#perhatikan-hal-berikut">
+       perhatikan hal berikut:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-loop">
+     nested Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-comprehension">
+     list comprehension
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-comprehension-using-condition">
+       list comprehension using condition.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-loop">
+   Review Loop
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h1>
+<p>seringkali kita melakukan pengulangan suatu kode, padahal pada Python ada fitur yang bisa kita gunakan untuk melakukan pengulangan. yaitu for loop, while loop, dan for each loop. sebagai contoh dibawah ini:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+</pre></div>
+</div>
+</div>
+</div>
+<p>kita bisa menggunakan cara yang lebih efisien untuk melakukan pengulangan. yaitu dengan menggunakan looping.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This can be so much easier with loops!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+This can be so much easier with loops!
+</pre></div>
+</div>
+</div>
+</div>
+<p>seperti yang anda lihat di atas alih alih kita menulis 10 baris kode kini kita hanya butuh dua barus kode, dengan output yang sama.</p>
+<section id="for-loop-sebuah-pengenalan">
+<h2>for loop: sebuah pengenalan.<a class="headerlink" href="#for-loop-sebuah-pengenalan" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">board_games</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Settlers of Catan&quot;</span><span class="p">,</span> <span class="s2">&quot;Carcassone&quot;</span><span class="p">,</span> <span class="s2">&quot;Power Grid&quot;</span><span class="p">,</span> <span class="s2">&quot;Agricola&quot;</span><span class="p">,</span> <span class="s2">&quot;Scrabble&quot;</span><span class="p">]</span>
+
+<span class="n">sport_games</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;football&quot;</span><span class="p">,</span> <span class="s2">&quot;hockey&quot;</span><span class="p">,</span> <span class="s2">&quot;baseball&quot;</span><span class="p">,</span> <span class="s2">&quot;cricket&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">game</span> <span class="ow">in</span> <span class="n">board_games</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">game</span><span class="p">)</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sport_games</span><span class="p">:</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Settlers of Catan
+Carcassone
+Power Grid
+Agricola
+Scrabble
+football
+hockey
+baseball
+cricket
+</pre></div>
+</div>
+</div>
+</div>
+<p>pada contoh diatas menunjukkan bagaimana penggunaan for loop bisa emudahkan kita untuk melakukan pengulangan. adapun cara mendeklarasikan for loop adalah dengan menuliskan kode seperti ini:</p>
+<ol class="simple">
+<li><p>“for” digunakan sebagai reversed word yang menandakan awal dari suatu for loop.</p></li>
+<li><p>“i” dan “game” adalah variabel yang akan digunakan untuk mengisi nilai dari for loop. variable sementara ini bisa apa saja asalkan tidak reserved word. variable ini bisa digunakan di dalam block kode yang ada di dalam for loop.</p></li>
+<li><p>“in” digunakan untuk memisahkan elemen dari list menjadi item tiap iterasinya.</p></li>
+<li><p>“sport_games” dan “board_games” adalah list yang akan digunakan untuk mengisi nilai dari for loop.</p></li>
+<li><p>“:” digunakan untuk menandakan bahwa for loop akan dijalankan.</p></li>
+<li><p>aksi. aksi yang dimaksud di sini adalah blok kode yang ada didalam for loop.</p></li>
+</ol>
+<section id="for-loop-using-range">
+<h3>for loop using range<a class="headerlink" href="#for-loop-using-range" title="Permalink to this headline">#</a></h3>
+<p>kadang kala kita tidak ingin menulis kode yang sama untuk setiap iterasi, kita bisa menggunakan range. bedanya dengan for loop pada list adalah range akan mengisi nilai dari 0 sampai dengan batas yang ditentukan. tidak perlu menginisiasi list karena range akan mengisi nilai dari 0 sampai dengan batas yang ditentukan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">promise</span> <span class="o">=</span> <span class="s2">&quot;I will finish the python loops module!&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">promise</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I will finish the python loops module!
+I will finish the python loops module!
+I will finish the python loops module!
+I will finish the python loops module!
+I will finish the python loops module!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="while-loop-sebuah-pengenalan">
+<h2>While loop: sebuah pengenalan.<a class="headerlink" href="#while-loop-sebuah-pengenalan" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+  <span class="c1"># Loop Body</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+  <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+<p>mari kita breakdown kode diatas:</p>
+<ol class="simple">
+<li><p>count adalah variable yang akan digunakan untuk mengisi nilai dari while loop.</p></li>
+<li><p>while merupakan reserved word yang menandakan awal dari suatu while loop.</p></li>
+<li><p>“count &lt;= 3” merupakan suatu kondisi yang akan dijalankan selama kondisi ini terpenuhi.</p></li>
+<li><p>“print(count)” merupakan kode yang akan dieksekusi selama kondisi pada poin 3 terpenuhi.</p></li>
+<li><p>“count+=1” sama dengan menambahkan nilai 1 pada variable count. hal ini digunakan agar while loop tidak terjebak dalam infinite iterasi.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_topics</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;variables&quot;</span><span class="p">,</span> <span class="s2">&quot;control flow&quot;</span><span class="p">,</span> <span class="s2">&quot;loops&quot;</span><span class="p">,</span> <span class="s2">&quot;modules&quot;</span><span class="p">,</span> <span class="s2">&quot;classes&quot;</span><span class="p">]</span>
+
+<span class="c1">#Your code below: </span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">python_topics</span><span class="p">)</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">python_topics</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+  <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>variables
+control flow
+loops
+modules
+classes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_topics</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;variables&quot;</span><span class="p">,</span> <span class="s2">&quot;control flow&quot;</span><span class="p">,</span> <span class="s2">&quot;loops&quot;</span><span class="p">,</span> <span class="s2">&quot;modules&quot;</span><span class="p">,</span> <span class="s2">&quot;classes&quot;</span><span class="p">]</span>
+
+<span class="c1">#Your code below: </span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">python_topics</span><span class="p">)</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am learning about &quot;</span><span class="o">+</span><span class="n">python_topics</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+  <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am learning about variables
+I am learning about control flow
+I am learning about loops
+I am learning about modules
+I am learning about classes
+</pre></div>
+</div>
+</div>
+</div>
+<section id="infinite-loop-warning-keadaan-ini-akan-mengakibatkan-program-terjebak-dan-komputer-anda-crash">
+<h3>Infinite Loop: warning, keadaan ini akan mengakibatkan program terjebak dan komputer anda crash.<a class="headerlink" href="#infinite-loop-warning-keadaan-ini-akan-mengakibatkan-program-terjebak-dan-komputer-anda-crash" title="Permalink to this headline">#</a></h3>
+<p>infinite loop terjadi ketika loop tidak memiliki kondisi yang menghentikanya. hal ini mengakibatkan penuhnya memory dan cpu akan bekerja keras. sering kali infinite loop akan membuat program kita crash. pastikan kode anda tidak mengandung infinite loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students_period_A</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Briana&quot;</span><span class="p">,</span> <span class="s2">&quot;Cheri&quot;</span><span class="p">,</span> <span class="s2">&quot;Daniele&quot;</span><span class="p">]</span>
+<span class="n">students_period_B</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dora&quot;</span><span class="p">,</span> <span class="s2">&quot;Minerva&quot;</span><span class="p">,</span> <span class="s2">&quot;Alexa&quot;</span><span class="p">,</span> <span class="s2">&quot;Obie&quot;</span><span class="p">]</span>
+
+<span class="c1"># for student in students_period_A:</span>
+<span class="c1">#   students_period_A.append(student)</span>
+<span class="c1">#   print(student)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>kode diatas merupakan kode yang mengandung infinite loop hari ini karena tiap kali kode pada blok for dijalankan akan menambahkan jumlah iterasi pada keseluruhan cell. hal ini menyebabkan infinite loop. saya beri tanda komen agar tidak terkompilasi saat “jupyter-book build” dijalankan.</p>
+</section>
+<section id="cara-menggabungkan-2-list-dengan-menggunakan-for-loop">
+<h3>cara menggabungkan 2 list dengan menggunakan for loop.<a class="headerlink" href="#cara-menggabungkan-2-list-dengan-menggunakan-for-loop" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students_period_A</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Briana&quot;</span><span class="p">,</span> <span class="s2">&quot;Cheri&quot;</span><span class="p">,</span> <span class="s2">&quot;Daniele&quot;</span><span class="p">]</span>
+<span class="n">students_period_B</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dora&quot;</span><span class="p">,</span> <span class="s2">&quot;Minerva&quot;</span><span class="p">,</span> <span class="s2">&quot;Alexa&quot;</span><span class="p">,</span> <span class="s2">&quot;Obie&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students_period_A</span><span class="p">:</span>
+  <span class="n">students_period_B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students_period_B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dora&#39;, &#39;Minerva&#39;, &#39;Alexa&#39;, &#39;Obie&#39;, &#39;Alex&#39;, &#39;Briana&#39;, &#39;Cheri&#39;, &#39;Daniele&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loop-control-break">
+<h3>Loop Control: Break<a class="headerlink" href="#loop-control-break" title="Permalink to this headline">#</a></h3>
+<p>sering kali kita tidak perlu mengiterasi seluruh koleksi (list, tuple) untuk mencari suatu nilai tertentu. kita bisa menggunakan break untuk menghentikan iterasi. break berguna untuk menghentikan iterasi. ketika kondisi pada break terpenuhi. maka akan berhenti dari iterasi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dog_breeds_available_for_adoption</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;french_bulldog&quot;</span><span class="p">,</span> <span class="s2">&quot;dalmatian&quot;</span><span class="p">,</span> <span class="s2">&quot;shihtzu&quot;</span><span class="p">,</span> <span class="s2">&quot;poodle&quot;</span><span class="p">,</span> <span class="s2">&quot;collie&quot;</span><span class="p">]</span>
+<span class="n">dog_breed_I_want</span> <span class="o">=</span> <span class="s2">&quot;dalmatian&quot;</span>
+
+<span class="k">for</span> <span class="n">dog_breed</span> <span class="ow">in</span> <span class="n">dog_breeds_available_for_adoption</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">dog_breed</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">dog_breed</span> <span class="o">==</span> <span class="n">dog_breed_I_want</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;They have the dog I want!&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>french_bulldog
+dalmatian
+They have the dog I want!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loop-control-continue">
+<h3>Loop Control: Continue<a class="headerlink" href="#loop-control-continue" title="Permalink to this headline">#</a></h3>
+<p>continue berguna untuk melanjutkan iterasi. ketika kondisi pada continue terpenuhi, maka akan melanjutkan iterasi. dalam artian, kondisi yang terpenuhi oleh continue akan diabaikan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">big_number_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">big_number_list</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">continue</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+4
+5
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>seperti yang anda duga bilangan negatif akan diabaikan, karena kita set kondisi untuk continue itu ” 1 &lt;= 0”.</p>
+<section id="perhatikan-hal-berikut">
+<h4>perhatikan hal berikut:<a class="headerlink" href="#perhatikan-hal-berikut" title="Permalink to this headline">#</a></h4>
+<p>sama dengan break, continue biasanya berpasangan dengan control flow seperti if, elif dan else.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ages</span><span class="p">:</span> 
+  <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">21</span><span class="p">:</span> 
+    <span class="k">continue</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38
+34
+26
+21
+67
+41
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="nested-loop">
+<h3>nested Loop<a class="headerlink" href="#nested-loop" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sales_data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]]</span>
+<span class="n">scoops_sold</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">sales_data</span><span class="p">:</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">location</span><span class="p">:</span> 
+    <span class="n">scoops_sold</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scoops_sold</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 17, 22]
+[2, 10, 3]
+[5, 12, 13]
+96
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-comprehension">
+<h3>list comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h3>
+<p>Alih-alih menulis kode seperti dibawah ini:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">]</span>
+<span class="n">doubled</span> <span class="o">=</span> <span class="p">[]</span>
+ 
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+  <span class="n">doubled</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="n">doubled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, -2, 158, 66, -90]
+</pre></div>
+</div>
+</div>
+</div>
+<p>kita bisa menulis variable double dengan list comprehension yaitu seerti ini:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">]</span>
+<span class="n">doubled</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">doubled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, -2, 158, 66, -90]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="k">for</span> <span class="o">&lt;</span><span class="n">element</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">collection</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]</span>
+    <span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="k">for</span> <span class="o">&lt;</span><span class="n">element</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">collection</span><span class="o">&gt;</span><span class="p">]</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>mari kita breakdown bagaimana menggunakan list comprehension:</p>
+<ol class="simple">
+<li><p>inisiasi temporary variable yang meruapakan item dari list.</p></li>
+<li><p>for adalah loop untuk element dari koleksi.</p></li>
+<li><p>element adalah item dari koleksi.</p></li>
+<li><p>in menunjukkan bahwa item berada dalam koleksi.</p></li>
+<li><p>kelekukan adalah adalah kumpulan data struktur yang akan di iterasi.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">57</span><span class="p">]</span>
+<span class="n">scaled_grades</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">+</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">grades</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scaled_grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="list-comprehension-using-condition">
+<h4>list comprehension using condition.<a class="headerlink" href="#list-comprehension-using-condition" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> 
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 9, 14, 15, 16, 19, 20, 21, 23, 24, 26, 27, 28, 29, 31, 34, 39, 43, 44, 45, 47, 49, 50, 53, 57, 60, 61, 63, 64, 69, 70, 72, 73, 74, 75, 78, 80, 81, 84, 85, 86, 87, 88, 89, 91, 93, 95, 98]
+</pre></div>
+</div>
+</div>
+</div>
+<p>sekarang kita telah mendapatkan list dari angka ganjil dan genap dari 1 sampai 100. abaikan dulu apa itu random dalam python. intinya random itu memunculkan angka acak dari 0 sampai 100 secara acak. jika angka random = 1 maka hasil dari range akan diabaikan. sekarang bagaimana caranya kita bisa menjadikan list a menjadi list dari bilangan genap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># b adalan list dari bilangan genap dengan mengalikan 2 bilangan ganjil pada list a. </span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">z</span><span class="o">*</span><span class="mi">2</span>  <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">z</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18, 30, 38, 42, 46, 54, 58, 62, 78, 86, 90, 94, 98, 106, 114, 122, 126, 138, 146, 150, 162, 170, 174, 178, 182, 186, 190]
+</pre></div>
+</div>
+</div>
+</div>
+<p>mari kita breakdown lagi kode diatas:</p>
+<ol class="simple">
+<li><p>[] adalah inisiasi dari list comprehension</p></li>
+<li><p>z*2 merupakan expresi yang akan dijalankan</p></li>
+<li><p>for adalah looping untuk element dari koleksi.</p></li>
+<li><p>in menunjukkan bahwa item berada dalam koleksi.</p></li>
+<li><p>if adalah kondisi yang membatasi for loop.</p></li>
+<li><p>” z % 2 == 0” merupakan kondisi yang akan dijalankan.</p></li>
+</ol>
+<p>kode diatas adalah list comprehension yang mengambil list a dan menjadikan bilangan ganjil pada list a menjadi list dari bilangan genap. selanjutnya kita akan mengantikan bilangan ganjil di list a dengan bilangan genap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span> 
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18, 30, 38, 42, 46, 54, 58, 62, 78, 86, 90, 94, 98, 106, 114, 122, 126, 138, 146, 150, 162, 170, 174, 178, 182, 186, 190, 16, 28, 32, 40, 48, 52, 56, 68, 88, 100, 120, 128, 140, 144, 148, 156, 160, 168, 172, 176, 196]
+</pre></div>
+</div>
+</div>
+</div>
+<p>untuk mengecek apakah masih ada bilangan genap pada list a kita bisa menggunakan loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="k">break</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bilangan ganjil ditemmukan&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bilangan ganjil tidak ditemukan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bilangan ganjil tidak ditemukan
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">161</span><span class="p">,</span> <span class="mi">164</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">157</span><span class="p">]</span>
+<span class="n">can_ride_coaster</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">heights</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">161</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">can_ride_coaster</span><span class="p">)</span>
+<span class="c1"># dari codeacademy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="review-loop">
+<h2>Review Loop<a class="headerlink" href="#review-loop" title="Permalink to this headline">#</a></h2>
+<p>dari laman ini kita belajar:</p>
+<ul class="simple">
+<li><p>cara menulis for loop</p></li>
+<li><p>menggunakan range pada for loop</p></li>
+<li><p>cara menulis while loop</p></li>
+<li><p>apa itu infinite loop dan bagaimana cara untuk menghentikan infinite loop.</p></li>
+<li><p>menggunakan break dan continue.</p></li>
+<li><p>bagaimana list comprehension bekerja.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code below:</span>
+<span class="n">single_digits</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">single_digits</span><span class="p">:</span> 
+  <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+<span class="n">cubes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">single_digits</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cubes</span><span class="p">)</span>
+
+<span class="c1">## solution for codeacademy loop review. </span>
+  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="list.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">List</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="function.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Function</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Muhammad Rizkillah<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

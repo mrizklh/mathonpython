@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # this is introduction to python 
+# # introduction to python 
 # 
 # at this point we have no idea what to do. 
 
