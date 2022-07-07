@@ -393,6 +393,23 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#return-value">
+   Return Value
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-return">
+     Multiple return
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-function">
+   review Function
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -465,6 +482,23 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#return-value">
+   Return Value
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-return">
+     Multiple return
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-function">
+   review Function
+  </a>
  </li>
 </ul>
 
@@ -680,7 +714,182 @@ First, we will stop in denmark, then france, and lastly germany
 </div>
 <section id="variable-accessible-inside-a-function">
 <h3>Variable accessible inside a function<a class="headerlink" href="#variable-accessible-inside-a-function" title="Permalink to this headline">#</a></h3>
+<p>suatu variable yang didifinisikan di dalam fungsi ini bisa dipanggil di luar fungsi tersebut. seperti yang anda lihat pada kode di bawah. variable a yang didifinisikan di dalam fungsi ini tidak bisa dipanggil di luar fungsi tersebut. hal ini karena <em>scope</em> atau jangkauan dari useable variable tersebut cuma sebatas di dalam fungsi tersebut. Namun, kita bisa menggunakan variable yang didefinisikan secara global ke dalam fungsi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_fungsi</span><span class="p">(</span><span class="n">argument</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+<span class="n">test_fungsi</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/workspaces/mathonpython/buku/intro/function.ipynb Cell 21&#39;</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://codespaces%2Bmrizklh-mathonpython-69gpqv7v6hrjj7/workspaces/mathonpython/buku/intro/function.ipynb#ch0000024vscode-remote?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="nb">print</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://codespaces%2Bmrizklh-mathonpython-69gpqv7v6hrjj7/workspaces/mathonpython/buku/intro/function.ipynb#ch0000024vscode-remote?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">test_fungsi</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://codespaces%2Bmrizklh-mathonpython-69gpqv7v6hrjj7/workspaces/mathonpython/buku/intro/function.ipynb#ch0000024vscode-remote?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;a&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">favorite_locations</span> <span class="o">=</span> <span class="s2">&quot;Paris, Norway, Iceland&quot;</span>
+<span class="k">def</span> <span class="nf">print_count_locations</span><span class="p">():</span>
+  
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are 3 locations&quot;</span><span class="p">)</span>
+    
+<span class="c1"># This function will print the favorite locations</span>
+<span class="k">def</span> <span class="nf">show_favorite_locations</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your favorite locations are: &quot;</span> <span class="o">+</span> <span class="n">favorite_locations</span><span class="p">)</span>
+
+<span class="n">print_count_locations</span><span class="p">()</span>
+<span class="n">show_favorite_locations</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 3 locations
+Your favorite locations are: Paris, Norway, Iceland
+</pre></div>
+</div>
+</div>
+</div>
+<p>contoh diatas merupakan salah satu contoh dari variable yang didifinisikan secara global dan diakses di dalam fungsi.yaitu variable “favorite_location”.</p>
 </section>
+</section>
+<section id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">#</a></h2>
+<p>selain dengan menggunakan print() function. kita juga bisa menggunakan reserved word return untuk mengembalikan nilai dari fungsi. return berfunsi sebagai yang mengeluarkan nilai dari fungsi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+  <span class="k">return</span> <span class="s2">&quot;Hello &quot;</span> <span class="o">+</span> <span class="n">name</span>
+
+<span class="n">hello</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello John&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>pada kode diatas kita tidak perlu menggunakan print function karena sudah kata return sudah mencukupi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_budget</span> <span class="o">=</span> <span class="mf">3500.75</span>
+
+<span class="k">def</span> <span class="nf">print_remaining_budget</span><span class="p">(</span><span class="n">budget</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your remaining budget is: $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">budget</span><span class="p">))</span>
+
+<span class="n">print_remaining_budget</span><span class="p">(</span><span class="n">current_budget</span><span class="p">)</span>
+
+<span class="c1"># Write your code below: </span>
+<span class="k">def</span> <span class="nf">deduct_expense</span><span class="p">(</span><span class="n">budget</span><span class="p">,</span> <span class="n">expense</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">budget</span> <span class="o">-</span> <span class="n">expense</span>
+
+<span class="n">shirt_expense</span> <span class="o">=</span> <span class="mi">9</span>
+
+<span class="n">new_budget_after_shirt</span> <span class="o">=</span> <span class="n">deduct_expense</span><span class="p">(</span> <span class="n">current_budget</span><span class="p">,</span> <span class="n">shirt_expense</span> <span class="p">)</span>
+
+<span class="n">print_remaining_budget</span><span class="p">(</span><span class="n">new_budget_after_shirt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="multiple-return">
+<h3>Multiple return<a class="headerlink" href="#multiple-return" title="Permalink to this headline">#</a></h3>
+<p>gunakan koma untuk memisahkan nilai yang akan dikembalikan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">span_of_time</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">start_time</span><span class="p">,</span> <span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+<span class="n">span_of_time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">top_tourist_locations_italy</span><span class="p">():</span>
+  <span class="n">first</span> <span class="o">=</span> <span class="s2">&quot;Rome&quot;</span>
+  <span class="n">second</span> <span class="o">=</span> <span class="s2">&quot;Venice&quot;</span>
+  <span class="n">third</span> <span class="o">=</span> <span class="s2">&quot;Florence&quot;</span>
+  <span class="k">return</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">third</span>
+<span class="n">most_popular1</span><span class="p">,</span> <span class="n">most_popular2</span><span class="p">,</span> <span class="n">most_popular3</span> <span class="o">=</span> <span class="n">top_tourist_locations_italy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">most_popular1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">most_popular2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">most_popular3</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="review-function">
+<h2>review Function<a class="headerlink" href="#review-function" title="Permalink to this headline">#</a></h2>
+<p>di laman ini kita belajar:</p>
+<ul class="simple">
+<li><p>kapan menggunakan suatu fungsi.</p></li>
+<li><p>apa itu fungsi dalam python dan bagaimana mendeklarasikan fungsi.</p></li>
+<li><p>bagaimana indentation pada kode python.</p></li>
+<li><p>bagaimana memasukkan input ke dalam fungsi.</p></li>
+<li><p>perbedaan build-in function dan user defined function.</p></li>
+<li><p>berbagai macan tipe argument</p></li>
+<li><p>return value</p></li>
+<li><p>scope of variable.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below:</span>
+
+<span class="k">def</span> <span class="nf">trip_planner_welcome</span><span class="p">(</span><span class="n">name</span><span class="p">):</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to tripplanner v1.0 &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="n">trip_planner_welcome</span><span class="p">(</span><span class="s2">&quot; &lt;YOUR NAME HERE&gt; &quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">estimated_time_rounded</span><span class="p">(</span><span class="n">estimated_time</span><span class="p">):</span>
+  <span class="n">rounded_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">estimated_time</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">rounded_time</span>
+
+<span class="n">estimate</span> <span class="o">=</span> <span class="n">estimated_time_rounded</span><span class="p">(</span><span class="mf">2.43</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">destination_setup</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">estimated_time</span><span class="p">,</span> <span class="n">mode_of_transport</span><span class="o">=</span><span class="s2">&quot;Car&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your trip starts off in &quot;</span> <span class="o">+</span> <span class="n">origin</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And you are traveling to &quot;</span> <span class="o">+</span> <span class="n">destination</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You will be traveling by &quot;</span> <span class="o">+</span> <span class="n">mode_of_transport</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It will take approximately &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">estimated_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; hours&quot;</span><span class="p">)</span>
+
+
+<span class="n">destination_setup</span><span class="p">(</span><span class="s2">&quot; &lt;PICK AN ORIGIN&gt; &quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;PICK A DESTINATION &gt; &quot;</span><span class="p">,</span> <span class="n">estimate</span><span class="p">,</span> <span class="s2">&quot;Car&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome to tripplanner v1.0 mr
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 

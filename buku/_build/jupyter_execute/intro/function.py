@@ -136,3 +136,133 @@ print(rounded_price)
 
 # #### Variable accessible inside a function
 # 
+# suatu variable yang didifinisikan di dalam fungsi ini bisa dipanggil di luar fungsi tersebut. seperti yang anda lihat pada kode di bawah. variable a yang didifinisikan di dalam fungsi ini tidak bisa dipanggil di luar fungsi tersebut. hal ini karena *scope* atau jangkauan dari useable variable tersebut cuma sebatas di dalam fungsi tersebut. Namun, kita bisa menggunakan variable yang didefinisikan secara global ke dalam fungsi. 
+# 
+
+# In[16]:
+
+
+def test_fungsi(argument):
+    a = 0 
+    print(argument)
+test_fungsi("Hello World")
+print(a)
+
+
+# In[17]:
+
+
+favorite_locations = "Paris, Norway, Iceland"
+def print_count_locations():
+  
+  print("There are 3 locations")
+    
+# This function will print the favorite locations
+def show_favorite_locations():
+  print("Your favorite locations are: " + favorite_locations)
+
+print_count_locations()
+show_favorite_locations()
+
+
+# contoh diatas merupakan salah satu contoh dari variable yang didifinisikan secara global dan diakses di dalam fungsi.yaitu variable "favorite_location". 
+
+# ### Return Value 
+# 
+# selain dengan menggunakan print() function. kita juga bisa menggunakan reserved word return untuk mengembalikan nilai dari fungsi. return berfunsi sebagai yang mengeluarkan nilai dari fungsi. 
+
+# In[20]:
+
+
+def hello(name):
+  return "Hello " + name
+
+hello("John")
+
+
+# pada kode diatas kita tidak perlu menggunakan print function karena sudah kata return sudah mencukupi. 
+
+# In[ ]:
+
+
+current_budget = 3500.75
+
+def print_remaining_budget(budget):
+  print("Your remaining budget is: $" + str(budget))
+
+print_remaining_budget(current_budget)
+
+# Write your code below: 
+def deduct_expense(budget, expense):
+  return budget - expense
+
+shirt_expense = 9
+
+new_budget_after_shirt = deduct_expense( current_budget, shirt_expense )
+
+print_remaining_budget(new_budget_after_shirt)
+
+
+# #### Multiple return 
+# 
+# gunakan koma untuk memisahkan nilai yang akan dikembalikan. 
+# 
+
+# In[1]:
+
+
+def span_of_time(start_time, end_time):
+  return start_time, (end_time - start_time)
+span_of_time(10, 20)
+
+
+# In[ ]:
+
+
+def top_tourist_locations_italy():
+  first = "Rome"
+  second = "Venice"
+  third = "Florence"
+  return first, second, third
+most_popular1, most_popular2, most_popular3 = top_tourist_locations_italy()
+print(most_popular1)
+print(most_popular2)
+print(most_popular3)    
+
+
+# ## review Function
+# di laman ini kita belajar: 
+# - kapan menggunakan suatu fungsi.
+# - apa itu fungsi dalam python dan bagaimana mendeklarasikan fungsi.
+# - bagaimana indentation pada kode python.
+# - bagaimana memasukkan input ke dalam fungsi. 
+# - perbedaan build-in function dan user defined function.
+# - berbagai macan tipe argument
+# - return value 
+# - scope of variable. 
+
+# In[6]:
+
+
+# Write your code below:
+
+def trip_planner_welcome(name): 
+  print("Welcome to tripplanner v1.0 " + name)
+
+trip_planner_welcome(" <YOUR NAME HERE> ")
+
+def estimated_time_rounded(estimated_time):
+  rounded_time = round(estimated_time)
+  return rounded_time
+
+estimate = estimated_time_rounded(2.43)
+
+def destination_setup(origin, destination, estimated_time, mode_of_transport="Car"):
+  print("Your trip starts off in " + origin)
+  print("And you are traveling to " + destination)
+  print("You will be traveling by " + mode_of_transport)
+  print("It will take approximately " + str(estimated_time) + " hours")
+
+
+destination_setup(" <PICK AN ORIGIN> ", "<PICK A DESTINATION > ", estimate, "Car")
+
