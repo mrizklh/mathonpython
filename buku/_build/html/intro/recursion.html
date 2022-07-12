@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>introduction to python &#8212; SKIA with Me</title>
+    <title>Recursion &#8212; SKIA with Me</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="control flow" href="control_flow.html" />
-    <link rel="prev" title="Welcome to SKIA with ME" href="../intro.html" />
+    <link rel="next" title="String in Python" href="strings.html" />
+    <link rel="prev" title="code challenge 1: control flow" href="codechallenge1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro1.html">
    introduction to python
   </a>
  </li>
@@ -139,8 +139,8 @@ const thebe_selector_output = ".output, .cell_output"
    code challenge 1: control flow
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="recursion.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Recursion
   </a>
  </li>
@@ -208,7 +208,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/mrizklh/mathonpython/master?urlpath=tree/buku/intro/intro1.ipynb"
+        <a href="https://mybinder.org/v2/gh/mrizklh/mathonpython/master?urlpath=tree/buku/intro/recursion.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -268,7 +268,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/mrizklh/mathonpython/issues/new?title=Issue%20on%20page%20%2Fintro/intro1.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/mrizklh/mathonpython/issues/new?title=Issue%20on%20page%20%2Fintro/recursion.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -296,7 +296,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/intro/intro1.ipynb"
+        <a href="../_sources/intro/recursion.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -333,23 +333,84 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contoh-kasus">
+   contoh kasus
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jawab">
+     jawab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-power-of">
+     is power of
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>introduction to python</h1>
+                <h1>Recursion</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contoh-kasus">
+   contoh kasus
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jawab">
+     jawab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-power-of">
+     is power of
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -357,149 +418,119 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
-<h1>introduction to python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">#</a></h1>
-<p>at this point we have no idea what to do.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="recursion">
+<h1>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">#</a></h1>
+<p>Rekursi adalah</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## asign value to python </span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rekusi</span> <span class="n">adalah</span> <span class="n">adalah</span> <span class="n">memanggil</span> <span class="n">suatu</span> <span class="n">fungsi</span> <span class="n">di</span> <span class="n">dalam</span> <span class="n">fungsi</span> <span class="n">itu</span> <span class="n">sendiri</span><span class="o">.</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">rekusi</span> <span class="n">adalah</span> <span class="n">adalah</span> <span class="n">memanggil</span> <span class="n">suatu</span> <span class="n">fungsi</span> <span class="n">di</span> <span class="n">dalam</span> <span class="n">fungsi</span> <span class="n">itu</span> <span class="n">sendiri</span><span class="o">.</span>
+           <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
+<section id="contoh-kasus">
+<h2>contoh kasus<a class="headerlink" href="#contoh-kasus" title="Permalink to this headline">#</a></h2>
+<p>let says… kita ingin membuat fungsi yang mengambil suatu input bilangan bulat dan mengembalikan total penjumlahan dari 1 sampai input tersebut.</p>
+<section id="jawab">
+<h3>jawab<a class="headerlink" href="#jawab" title="Permalink to this headline">#</a></h3>
+<p>kasus ini dapat diselesaikan dengan metode rekusif. karena f(n) = f(n-1) + n, maka kita bisa mengimplementasikan fungsi ini dengan rekusif. bentuk kodenya dalah sebagai berikut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#codeacademy intro to python computer science 101 </span>
-
-<span class="n">quilt_width</span> <span class="o">=</span> <span class="mi">8</span> 
-<span class="n">quilt_length</span> <span class="o">=</span> <span class="mi">12</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">quilt_width</span> <span class="o">*</span> <span class="n">quilt_length</span><span class="p">)</span>
-
-<span class="c1"># for third question cahnge the value of quilt_width to 10 and quilt_length to 8 so the answer is 64 </span>
-<span class="n">quilt_length</span> <span class="o">=</span> <span class="mi">8</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">quilt_width</span> <span class="o">*</span> <span class="n">quilt_length</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">jumlah_sampai_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">jumlah_sampai_n</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">jumlah_sampai_n</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">jumlah_sampai_n</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>96
-64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3828
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="is-power-of">
+<h3>is power of<a class="headerlink" href="#is-power-of" title="Permalink to this headline">#</a></h3>
+<p>mari kita buat funsi yang mengamambil dua input, pada argument pertama meruapakan bilangan bulat dan pada argument kedua meruapakan bilangan bulat. fungsi ini akan mengembalikan true jika bilangan tersebut merupakan pangkat dari bilangan lain.</p>
+<p>misalnya f(8,2) maka outputnya harusnya True. karena 2^3 = 8.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation of squares for:</span>
-<span class="c1"># 6x6 quilt</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">6</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># 7x7 quilt</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">7</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1"># 8x8 quilt</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">8</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1"># How many squares for 6 people to have 6 quilts each that are 6x6?</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">6</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="o">^</span><span class="mi">89245823459</span>
+<span class="k">def</span> <span class="nf">is_powerof</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+    
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">is_powerof</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">is_powerof</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36
-49
-64
-1296
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
 </div>
+<p>pada contoh kode diatas merupakan contoh funsi yang bisa didefinisikan dengan fungsi itu sendiri. f(5,2) = f(2.5/2,2) = f(4/2,2)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#food for thought: what number team are the two people next to you (26 and 28) on? What are the numbers for all 4 teams? (Optional Challenge Question)</span>
-<span class="n">my_team</span> <span class="o">=</span> <span class="mi">26</span>
-<span class="n">your_team</span> <span class="o">=</span> <span class="mi">28</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_team</span> <span class="o">+</span> <span class="n">your_team</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a function that take 2 input a number and base number and return the exponent of the number</span>
+<span class="k">def</span> <span class="nf">exponent</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> 
+
+<span class="n">exponent</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
 </div>
+<p>f(n,m)= f()</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">=</span> <span class="s2">&quot;The wind, &quot;</span>
-<span class="n">string2</span> <span class="o">=</span> <span class="s2">&quot;which had hitherto carried us along with amazing rapidity, &quot;</span>
-<span class="n">string3</span> <span class="o">=</span> <span class="s2">&quot;sank at sunset to a light breeze; &quot;</span>
-<span class="n">string4</span> <span class="o">=</span> <span class="s2">&quot;the soft air just ruffled the water and &quot;</span>
-<span class="n">string5</span> <span class="o">=</span> <span class="s2">&quot;caused a pleasant motion among the trees as we approached the shore, &quot;</span>
-<span class="n">string6</span> <span class="o">=</span> <span class="s2">&quot;from which it wafted the most delightful scent of flowers and hay.&quot;</span>
-
-<span class="c1"># Define message below:</span>
-<span class="n">message</span> <span class="o">=</span> <span class="n">string1</span> <span class="o">+</span> <span class="n">string2</span> <span class="o">+</span> <span class="n">string3</span> <span class="o">+</span> <span class="n">string4</span> <span class="o">+</span> <span class="n">string5</span> <span class="o">+</span> <span class="n">string6</span>
-
-
-<span class="c1">#print(message)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## maek a function that take a 2 number that is number and base number and return the exponent of the number</span>
+<span class="k">def</span> <span class="nf">how_many_exponent</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a tidak genap pangkat b&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">how_many_exponent</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">how_many_exponent</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+  
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The wind, which had hitherto carried us along with amazing rapidity, sank at sunset to a light breeze; the soft air just ruffled the water and caused a pleasant motion among the trees as we approached the shore, from which it wafted the most delightful scent of flowers and hay.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a tidak genap pangkat b&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_price</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">new_sneakers</span> <span class="o">=</span> <span class="mf">50.00</span>
-
-<span class="n">total_price</span> <span class="o">+=</span> <span class="n">new_sneakers</span>
-
-<span class="n">nice_sweater</span> <span class="o">=</span> <span class="mf">39.00</span>
-<span class="n">fun_books</span> <span class="o">=</span> <span class="mf">20.00</span>
-<span class="c1"># Update total_price here:</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The total price is&quot;</span><span class="p">,</span> <span class="n">total_price</span> <span class="o">+</span> <span class="n">nice_sweater</span> <span class="o">+</span> <span class="n">fun_books</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The total price is 109.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>next task:
-Create variables:</p>
-<p>my_age
-half_my_age
-greeting
-name
-greeting_with_name
-Assign values to each using your knowledge of division and concatenation!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find solution fron next task </span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
-<span class="n">my_age</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">half_my_age</span> <span class="o">=</span> <span class="n">my_age</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span> 
-<span class="n">greeting_name</span> <span class="o">=</span> <span class="n">greeting</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">name</span> 
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -529,17 +560,17 @@ Assign values to each using your knowledge of division and concatenation!</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="codechallenge1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to SKIA with ME</p>
+            <p class="prev-next-title">code challenge 1: control flow</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="control_flow.html" title="next page">
+    <a class='right-next' id="next-link" href="strings.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">control flow</p>
+        <p class="prev-next-title">String in Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
