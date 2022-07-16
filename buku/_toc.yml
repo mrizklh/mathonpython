@@ -10,7 +10,6 @@ chapters:
 - file: intro/list
 - file: intro/loops
 - file: intro/function
-- file: intro/codechallenge1
 - file: intro/recursion
 - file: intro/strings 
 

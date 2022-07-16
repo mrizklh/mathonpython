@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## code challenge 1: control flow 
+# # code challenge 
 # #### Larger Power 
 
 # In[1]:

@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Function 
-# ### Pengenalan 
+# ## Pengenalan 
 # sama seperti di matematika, fungsi adalah sebuah kumpulan kode yang dapat menghasilkan suatu nilai. fungsi bisa butuh input (parameter) dan output (return value). sama seperti pada contol flow dan loop. blok kode dalam fungsi bersifat local. dan fungsi setelah diinisiasi bisa dipanggil di dalam blok kode lain, atau bahkan di dalam kode itu sendiri. 
 
 # In[1]:

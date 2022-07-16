@@ -72,7 +72,7 @@ if credits >= 120 and gpa >= 2.0:
   print("You meet the requirements to graduate!")
 
 
-# ### Review 
+# ## Review 
 # 
 # Kali ini aku akan mereview kembali hasil pembelajaran kita pada kendali alir ini *control flow* ini. sebelum kendali alir kita tahu komputer bisa melakukan beberapa primitif operasi yaitu tambah, kurang, kali, bagi, dan modulus. 
 # 
@@ -117,3 +117,22 @@ print( (4 <= 2 * 3) and (7 + 1 == 8))
 
 #declare a int variable without assigning a value
 
+
+# ## catatan dari meta backend dev 
+# ### math logical operators 
+# match statement vs if statement 
+# 
+# if statement berguna untuk program yang relative kecil. 
+
+# In[7]:
+
+
+http_status = 201
+match http_status: 
+    case 200 | 201:
+        print("OK")
+    case 404:
+        print("Not Found")
+
+
+# match statement membandingkan beberapa niai sampai suatu kondisi terpenuhi. 

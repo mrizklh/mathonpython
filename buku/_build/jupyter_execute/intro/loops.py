@@ -340,3 +340,24 @@ print(cubes)
 ## solution for codeacademy loop review. 
   
 
+
+# ### controling loop 
+# #### break 
+# break berguna untuk menghentikan iterasi. ketika kondisi pada break terpenuhi. maka akan berhenti dari iterasi.
+
+# In[1]:
+
+
+for i in range(10):
+    print(i)
+    if i == 3:  
+        break
+
+
+# In[2]:
+
+
+a = isinstance(str, "aa")
+
+print(a) 
+
